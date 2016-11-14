@@ -9,6 +9,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.github.hierynomus.license" version "0.13.1"
+}
+
 apply plugin: 'base'
 
 configure([project(':webapp-base'), project(':webapp-mobile')]) {
@@ -89,5 +93,12 @@ configure([project(':mobileapp')]) {
                     'org.glassfish.json.**.*'
             ]
         }
+    }
+}
+
+license {
+    skipExistingHeaders
+    mapping {
+        fxml = 'XML_STYLE'
     }
 }
